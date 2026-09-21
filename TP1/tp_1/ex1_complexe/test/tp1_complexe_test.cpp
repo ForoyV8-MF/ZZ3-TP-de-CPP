@@ -146,7 +146,7 @@ TEST_CASE("TP1_Complexe::OperateurFlux") {
 }
 
 // #13 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Complexe::ConversionVersPolaire_V1") {
+TEST_CASE("TP1_Complexe::ConversionVersPolaire_V1") {
   const double re = 12.0;
   const double im = 24.0;
   const double mod = 26.832815;
@@ -157,10 +157,10 @@ TEST_CASE("TP1_Complexe::OperateurFlux") {
 
   REQUIRE(p.getMod() == Catch::Approx(mod).epsilon(1e-3));
   REQUIRE(p.getArg() == Catch::Approx(arg).epsilon(1e-3));
-} */
+}
 
 // #14 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Complexe::ConversionVersAlgebrique_V1") {
+TEST_CASE("TP1_Complexe::ConversionVersAlgebrique_V1") {
   const double mod = 24.0;
   const double arg = 12.0;
   const double re = 20.25249;
@@ -171,10 +171,10 @@ TEST_CASE("TP1_Complexe::OperateurFlux") {
 
   REQUIRE(z.getRe() == Catch::Approx(re).epsilon(1e-3));
   REQUIRE(z.getIm() == Catch::Approx(im).epsilon(1e-3));
-} */
+}
 
 // #15 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Complexe::ConversionVersAlgebrique_V2") {
+TEST_CASE("TP1_Complexe::ConversionVersAlgebrique_V2") {
   const double mod = 24.0;
   const double arg = 12.0;
   const double re = 20.25249;
@@ -185,10 +185,10 @@ TEST_CASE("TP1_Complexe::OperateurFlux") {
 
   REQUIRE(z.getRe() == Catch::Approx(re).epsilon(1e-3));
   REQUIRE(z.getIm() == Catch::Approx(im).epsilon(1e-3));
-} */
+}
 
 // #16 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Complexe::ConversionVersPolaire_V2") {
+TEST_CASE("TP1_Complexe::ConversionVersPolaire_V2") {
   const double re = 12.0;
   const double im = 24.0;
 
@@ -197,10 +197,10 @@ TEST_CASE("TP1_Complexe::OperateurFlux") {
 
   REQUIRE(z2.getRe() == Catch::Approx(re).epsilon(1e-3));
   REQUIRE(z2.getIm() == Catch::Approx(im).epsilon(1e-3));
-} */
+}
 
 // #17 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Complexe::ConversionVirtuel") {
+TEST_CASE("TP1_Complexe::ConversionVirtuel") {
   const double re = 12.0;
   const double im = 24.0;
   const double mod = 26.832815;
@@ -219,7 +219,7 @@ TEST_CASE("TP1_Complexe::OperateurFlux") {
   REQUIRE(z1.getIm() == Catch::Approx(im).epsilon(1e-3));
   REQUIRE(z2.getRe() == Catch::Approx(re).epsilon(1e-3));
   REQUIRE(z2.getIm() == Catch::Approx(im).epsilon(1e-3));
-} */
+}
 
 // #18 -------------------------------------------------------------------------
 /* TEST_CASE("TP1_Ensemble::Ajout") {

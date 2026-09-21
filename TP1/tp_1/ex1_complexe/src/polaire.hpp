@@ -2,6 +2,7 @@
 #define POLAIRE_HPP_2026
 
 #include "complexe.hpp"
+#include "algebrique.hpp"
 
 class Algebrique;
 
@@ -13,7 +14,7 @@ class Polaire : public Complexe
 
         Polaire();
         Polaire(double, double);
-        Polaire(const Algebrique);
+        Polaire(const Algebrique &);
 
         double getMod() const;
         double getArg() const;
@@ -22,6 +23,7 @@ class Polaire : public Complexe
         void setArg(double);
 
         void afficher(ostream &) const override;
+        Algebrique versAlgebrique() const override; // Pas de référence à retourner !
 };
 
 #endif
