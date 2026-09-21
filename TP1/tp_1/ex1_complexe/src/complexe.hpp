@@ -6,12 +6,15 @@
 
 using std::ostream;
 
+class Algebrique;
+
 class Complexe
 {
     // Destructeur default ?
     public : 
     
         virtual void afficher(ostream &) const = 0;
+        virtual Algebrique versAlgebrique() const = 0;
         friend ostream & operator<<(ostream &, const Complexe &);
 };
 

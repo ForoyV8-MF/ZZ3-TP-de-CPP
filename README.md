@@ -1,4 +1,4 @@
-# ZZ3 - TP de C++*
+# ZZ3 - TP de C++
 
 # Décommenter le fichier CMakeLists.txt
 
