@@ -23,3 +23,9 @@ Algebrique Algebrique::versAlgebrique() const
     Algebrique AlgebriqueVersAlgebrique = Algebrique(*this);
     return AlgebriqueVersAlgebrique;
 }
+
+Polaire Algebrique::versPolaire() const
+{
+    Polaire AlgebriqueVersPolaire = Polaire(*this);
+    return AlgebriqueVersPolaire;
+}

@@ -22,3 +22,9 @@ Algebrique Polaire::versAlgebrique() const // Ne retourne aucune référence !
     Algebrique PolaireVersAlgebrique = Algebrique(*this); // this est un pointeur, *this est une référence
     return PolaireVersAlgebrique;
 }
+
+Polaire Polaire::versPolaire() const
+{
+    Polaire PolaireVersPolaire = Polaire(*this);
+    return PolaireVersPolaire;
+}

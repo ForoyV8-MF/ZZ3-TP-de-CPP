@@ -5,7 +5,7 @@
 
 #include <algebrique.hpp>
 #include <polaire.hpp>
-// #include <ensemble.hpp>
+#include <ensemble.hpp>
 
 // #1 --------------------------------------------------------------------------
 TEST_CASE("TP1_Polaire::Constructeur") {
@@ -222,7 +222,7 @@ TEST_CASE("TP1_Complexe::ConversionVirtuel") {
 }
 
 // #18 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Ensemble::Ajout") {
+TEST_CASE("TP1_Ensemble::Ajout") {
   Algebrique z1(12.0, 24.0);
   Polaire z2(25.0, 13.0);
   Polaire z3(z1);
@@ -238,10 +238,10 @@ TEST_CASE("TP1_Complexe::ConversionVirtuel") {
   ens.ajouter(z4);
 
   REQUIRE(ens.size() == 4u);
-} */
+}
 
 // #19 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Ensemble::Iterateurs") {
+TEST_CASE("TP1_Ensemble::Iterateurs") {
   Algebrique z1(12.0, 24.0);
   Polaire z2(25.0, 13.0);
   Polaire z3(z1);
@@ -255,11 +255,11 @@ TEST_CASE("TP1_Complexe::ConversionVirtuel") {
   ens.ajouter(z4);
 
   Complexe *t[4];
-  unsigned i = 0;
-  Ensemble::const_iterator it = ens.begin();
+  unsigned j = 0;
+  Ensemble::const_iterator that = ens.begin();
 
-  while (it != ens.end())
-    t[i++] = *(it++);
+  while (that != ens.end())
+    t[j++] = *(that++);
 
   REQUIRE(typeid(*(t[0])) == typeid(Algebrique));
   REQUIRE(typeid(*(t[1])) == typeid(Polaire));
@@ -280,10 +280,10 @@ TEST_CASE("TP1_Complexe::ConversionVirtuel") {
   REQUIRE(z7.getMod() == Catch::Approx(26.8328).epsilon(1e-3));
   REQUIRE(z8.getRe() == Catch::Approx(22.6861).epsilon(1e-3));
   REQUIRE(z8.getIm() == Catch::Approx(10.5041).epsilon(1e-3));
-} */
+}
 
 // #20-23 ----------------------------------------------------------------------
-/* double re[] = {3, 7, 13, 27};
+double re[] = {3, 7, 13, 27};
 double im[] = {4, 8, 16, 32};
 
 Algebrique z1(re[0], im[0]);
@@ -291,18 +291,18 @@ Algebrique z2(re[1], im[1]);
 Algebrique z3(re[2], im[2]);
 Algebrique z4(re[3], im[3]);
 
-Ensemble ens; */
+Ensemble ens;
 
 // #20 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Ensemble::MoyenneVide") {
+TEST_CASE("TP1_Ensemble::MoyenneVide") {
   Algebrique b = moyenne(ens);
 
   REQUIRE(b.getRe() == 0);
   REQUIRE(b.getIm() == 0);
-} */
+}
 
 // #21 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Ensemble::Moyenne") {
+TEST_CASE("TP1_Ensemble::Moyenne") {
   ens.ajouter(z1);
   ens.ajouter(z2);
   ens.ajouter(z3);
@@ -312,22 +312,23 @@ Ensemble ens; */
 
   REQUIRE(b.getRe() == Catch::Approx((re[0] + re[1] + re[2] + re[3]) / 4));
   REQUIRE(b.getIm() == Catch::Approx((im[0] + im[1] + im[2] + im[3]) / 4));
-} */
+}
 
 // #22 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Ensemble::MoyenneAlgebrique") {
+TEST_CASE("TP1_Ensemble::MoyenneAlgebrique") {
   Algebrique b = MoyenneAlgebrique()(ens);
 
   REQUIRE(b.getRe() == Catch::Approx((re[0] + re[1] + re[2] + re[3]) / 4));
   REQUIRE(b.getIm() == Catch::Approx((im[0] + im[1] + im[2] + im[3]) / 4));
-} */
+}
 
 // #23 -------------------------------------------------------------------------
-/* TEST_CASE("TP1_Ensemble::MoyennePolaire") {
+TEST_CASE("TP1_Ensemble::MoyennePolaire") {
   Polaire p(Algebrique((re[0] + re[1] + re[2] + re[3]) / 4,
                        (im[0] + im[1] + im[2] + im[3]) / 4));
+
   Polaire b = MoyennePolaire()(ens);
 
   REQUIRE(b.getArg() == Catch::Approx(p.getArg()));
   REQUIRE(b.getMod() == Catch::Approx(p.getMod()));
-} */
+}

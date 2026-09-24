@@ -24,7 +24,9 @@ class Algebrique : public Complexe
         void setIm(double);
 
         void afficher(ostream &) const override;
+
         Algebrique versAlgebrique() const override;
+        Polaire versPolaire() const override;
 };
 
 #endif

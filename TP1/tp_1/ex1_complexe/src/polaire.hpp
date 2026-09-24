@@ -10,7 +10,7 @@ class Polaire : public Complexe
 {
     private : double mod, angle;
 
-    public : 
+    public :
 
         Polaire();
         Polaire(double, double);
@@ -23,7 +23,9 @@ class Polaire : public Complexe
         void setArg(double);
 
         void afficher(ostream &) const override;
+
         Algebrique versAlgebrique() const override; // Pas de référence à retourner !
+        Polaire versPolaire() const override;
 };
 
 #endif
