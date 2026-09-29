@@ -57,7 +57,7 @@ void mandelbrot(Image& img, int maxIter, Algebrique min, Algebrique max) {
 }
 
 int main() {
-  Image img(640 * 32, 480 * 32, 1, 3, 0);
+  Image img(640, 480, 1, 3, 0);
 
   mandelbrot(img, 100, {-2.0, -1.0}, {1.0, 1.0});
 
