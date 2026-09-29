@@ -18,8 +18,8 @@ class Ensemble
         vector<Complexe *> getVector() const;
 
         int size() const;
-        vector<Complexe *>::const_iterator begin() const;
-        vector<Complexe *>::const_iterator end() const;
+        const_iterator begin() const;
+        const_iterator end() const;
 
         void ajouter(Complexe &);
 };

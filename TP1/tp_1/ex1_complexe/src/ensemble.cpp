@@ -7,10 +7,10 @@ vector<Complexe *> Ensemble::getVector() const { return vecteur_complexe; }
 
 int Ensemble::size() const { return vecteur_complexe.size(); }
 
-vector<Complexe *>::const_iterator Ensemble::begin() const
+Ensemble::const_iterator Ensemble::begin() const
 { return vecteur_complexe.begin(); }
 
-vector<Complexe *>::const_iterator Ensemble::end() const
+Ensemble::const_iterator Ensemble::end() const
 { return vecteur_complexe.end(); }
 
 void Ensemble::ajouter(Complexe & adding)
