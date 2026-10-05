@@ -1,0 +1,51 @@
+#include "algebrique.hpp"
+
+Algebrique::Algebrique() : re(0), im(0) {}
+Algebrique::Algebrique(double real, double imaginary) : re(real), im(imaginary) {}
+Algebrique::Algebrique(const Polaire & pola) : re(pola.getMod() * cos(pola.getArg())), im(pola.getMod() * sin(pola.getArg())) {}
+Algebrique::Algebrique(const Algebrique & comp) : re(comp.getRe()), im(comp.getIm()) {}
+
+double Algebrique::getRe() const { return re; }
+double Algebrique::getIm() const { return im; }
+
+void Algebrique::setRe(double real) { re = real; }
+void Algebrique::setIm(double imaginary) { im = imaginary; }
+
+void Algebrique::afficher(ostream & ss) const
+{
+    ss << "(re="; ss << getRe();
+    ss << ";im="; ss << getIm();
+    ss << ")";
+}
+
+Algebrique Algebrique::versAlgebrique() const
+{
+    Algebrique AlgebriqueVersAlgebrique = Algebrique(*this);
+    return AlgebriqueVersAlgebrique;
+}
+
+Polaire Algebrique::versPolaire() const
+{
+    Polaire AlgebriqueVersPolaire = Polaire(*this);
+    return AlgebriqueVersPolaire;
+}
+
+Algebrique operator+(Algebrique G1, const Algebrique G2)
+{ Algebrique addition(G1.getRe() + G2.getRe(), G1.getIm() + G2.getIm()); return addition;}
+
+Algebrique operator-(Algebrique G1, const Algebrique G2)
+{ Algebrique soustraction(G1.getRe() - G2.getRe(), G1.getIm() - G2.getIm()); return soustraction; }
+
+Algebrique operator*(Algebrique G1, const Algebrique G2)
+{ Algebrique multiplication(G1.getRe() * G2.getRe() - G1.getIm() * G2.getIm(), G1.getRe() * G2.getIm() + G1.getIm() * G2.getRe()); return multiplication; }
+
+Algebrique operator/(Algebrique G, double diviseur)
+{
+    Algebrique division(0.0, 0.0);
+
+    if(diviseur != 0)
+        division.setRe(G.getRe() / diviseur);
+        division.setIm(G.getIm() / diviseur);
+    
+    return division;
+}
