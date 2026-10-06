@@ -43,9 +43,11 @@ Algebrique operator/(Algebrique G, double diviseur)
 {
     Algebrique division(0.0, 0.0);
 
-    if(diviseur != 0)
+    if(diviseur != 0.0)
+    {
         division.setRe(G.getRe() / diviseur);
-        division.setIm(G.getIm() / diviseur);
+        division.setIm(G.getIm() / diviseur);        
+    }
     
     return division;
 }

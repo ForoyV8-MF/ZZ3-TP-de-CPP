@@ -19,7 +19,7 @@ void Ensemble::ajouter(Complexe & adding)
 Algebrique moyenne(Ensemble & Moyen_age)
 {
     int taille = Moyen_age.size();
-    double S_re =0; double S_im = 0;
+    double S_re = 0; double S_im = 0;
 
     Algebrique Moyenne(0.0, 0.0);
 
