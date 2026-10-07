@@ -4,7 +4,7 @@
 using std::remainder;
 using std::numbers::pi;
 
-Polaire::Polaire() : mod(0), angle(0){}
+Polaire::Polaire() : mod(0.0), angle(0.0){}
 Polaire::Polaire(double module, double argument) : mod(module), angle(argument) {}
 Polaire::Polaire(const Algebrique & comp) : mod(sqrt(comp.getRe()*comp.getRe() + comp.getIm()*comp.getIm())), angle(atan2(comp.getIm(), comp.getRe())) {}
 

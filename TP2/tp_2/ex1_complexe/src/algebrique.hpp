@@ -31,7 +31,11 @@ class Algebrique : public Complexe
         friend Algebrique operator+(Algebrique, const Algebrique);
         friend Algebrique operator-(Algebrique, const Algebrique);
         friend Algebrique operator*(Algebrique, const Algebrique);
-        friend Algebrique operator/(Algebrique, double);
+        Algebrique operator/(double);
+
+        Algebrique & operator=(Algebrique);
+        Algebrique & operator+=(Algebrique);
+        Algebrique & operator/=(double);
 };
 
 #endif

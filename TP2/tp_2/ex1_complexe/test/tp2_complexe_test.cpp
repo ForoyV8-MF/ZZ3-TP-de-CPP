@@ -114,7 +114,7 @@ TEST_CASE("TP2_Algebrique::operator/") {
 }
 
 // #7 --------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::Moyenne_Algebrique") {
+TEST_CASE("TP2_Ensemble::Moyenne_Algebrique") {
   Ensemble<Algebrique> ens;
 
   Algebrique b0 = moyenne(ens);
@@ -134,10 +134,10 @@ TEST_CASE("TP2_Algebrique::operator/") {
   Algebrique b = moyenne(ens);
   REQUIRE(b.getRe() == Catch::Approx((3.0 + 7.0 + 13.0 + 27.0) / 4.0));
   REQUIRE(b.getIm() == Catch::Approx((4.0 + 8.0 + 16.0 + 32.0) / 4.0));
-} */
+}
 
 // #8 --------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::Moyenne_Polaire") {
+TEST_CASE("TP2_Ensemble::Moyenne_Polaire") {
   Polaire p1(12.0, 34.0);
   Polaire p2(56.0, 78.0);
   Polaire p3(90.0, 12.0);
@@ -161,10 +161,10 @@ TEST_CASE("TP2_Algebrique::operator/") {
   Polaire b = moyenne(ens);
   REQUIRE(b.getMod() == Catch::Approx(attendu.getMod()));
   REQUIRE(b.getArg() == Catch::Approx(attendu.getArg()));
-} */
+}
 
 // #9 --------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::MoyenneGenerique_Ensemble") {
+TEST_CASE("TP2_Ensemble::MoyenneGenerique_Ensemble") {
   Ensemble<Algebrique> ens;
 
   ens.ajouter(Algebrique(3.0, 4.0));
@@ -175,10 +175,10 @@ TEST_CASE("TP2_Algebrique::operator/") {
   Algebrique b = moyenne_generique(ens);
   REQUIRE(b.getRe() == Catch::Approx((3.0 + 7.0 + 13.0 + 27.0) / 4.0));
   REQUIRE(b.getIm() == Catch::Approx((4.0 + 8.0 + 16.0 + 32.0) / 4.0));
-} */
+}
 
 // #10 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurAlgebrique") {
+TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurAlgebrique") {
   std::vector<Algebrique> v;
 
   Algebrique b0 = moyenne_generique(v);
@@ -193,10 +193,10 @@ TEST_CASE("TP2_Algebrique::operator/") {
   Algebrique b = moyenne_generique(v);
   REQUIRE(b.getRe() == Catch::Approx((3.0 + 7.0 + 13.0 + 27.0) / 4.0));
   REQUIRE(b.getIm() == Catch::Approx((4.0 + 8.0 + 16.0 + 32.0) / 4.0));
-} */
+}
 
 // #11 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
+TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
   Polaire p1(12.0, 34.0);
   Polaire p2(56.0, 78.0);
   Polaire p3(90.0, 12.0);
@@ -215,7 +215,7 @@ TEST_CASE("TP2_Algebrique::operator/") {
   Polaire b = moyenne_generique(v);
   REQUIRE(b.getMod() == Catch::Approx(attendu.getMod()));
   REQUIRE(b.getArg() == Catch::Approx(attendu.getArg()));
-} */
+}
 
 // #12 -------------------------------------------------------------------------
 /* TEST_CASE("TP2_Ensemble::Rotate_Polaire") {

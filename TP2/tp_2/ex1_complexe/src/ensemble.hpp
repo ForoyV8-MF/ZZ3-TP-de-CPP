@@ -46,4 +46,12 @@ template <typename T>
 void Ensemble<T>::ajouter(T adding)
 { vecteur_complexe.push_back(adding); }
 
+template <typename T>
+Algebrique moyenne(Ensemble<T> &);
+
+template <typename T, template <typename> class C>
+Algebrique moyenne_generique(const C<T> &);
+
+#include "moyenne_algebrique.h"
+
 #endif

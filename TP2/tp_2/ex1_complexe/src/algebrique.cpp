@@ -1,6 +1,9 @@
 #include "algebrique.hpp"
 
-Algebrique::Algebrique() : re(0), im(0) {}
+using std::cout;
+using std::endl;
+
+Algebrique::Algebrique() : re(0.0), im(0.0) {}
 Algebrique::Algebrique(double real, double imaginary) : re(real), im(imaginary) {}
 Algebrique::Algebrique(const Polaire & pola) : re(pola.getMod() * cos(pola.getArg())), im(pola.getMod() * sin(pola.getArg())) {}
 Algebrique::Algebrique(const Algebrique & comp) : re(comp.getRe()), im(comp.getIm()) {}
@@ -39,15 +42,32 @@ Algebrique operator-(Algebrique G1, const Algebrique G2)
 Algebrique operator*(Algebrique G1, const Algebrique G2)
 { Algebrique multiplication(G1.getRe() * G2.getRe() - G1.getIm() * G2.getIm(), G1.getRe() * G2.getIm() + G1.getIm() * G2.getRe()); return multiplication; }
 
-Algebrique operator/(Algebrique G, double diviseur)
+Algebrique Algebrique::operator/(double diviseur)
 {
     Algebrique division(0.0, 0.0);
 
     if(diviseur != 0.0)
     {
-        division.setRe(G.getRe() / diviseur);
-        division.setIm(G.getIm() / diviseur);        
+        division.setRe((*this).getRe() / diviseur);
+        division.setIm((*this).getIm() / diviseur);
+
+        // cout << diviseur << endl;
     }
-    
+
     return division;
+}
+
+Algebrique & Algebrique::operator=(Algebrique affect)
+{ this->setRe(affect.getRe()); this->setIm(affect.getIm()); return *this; }
+
+Algebrique & Algebrique::operator+=(Algebrique affect)
+{
+    *this = *this + affect;
+    return *this;
+}
+
+Algebrique & Algebrique::operator/=(double divid)
+{
+    *this = *this / divid;
+    return *this;
 }
