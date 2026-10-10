@@ -1,11 +1,11 @@
-#ifndef MOYENNE_ALGEBRIQUE_HPP_2026
-#define MOYENNE_ALGEBRIQUE_HPP_2026
+#ifndef MOYENNE_ALGEBRIQUE_H_2026
+#define MOYENNE_ALGEBRIQUE_H_2026
 
 template <typename T>
 Algebrique moyenne(Ensemble<T> & Moyen_age)
 {
     int taille = Moyen_age.size();
-    double S_re = 0; double S_im = 0;
+    double S_re = 0.0; double S_im = 0.0;
 
     Algebrique Moyenne(0.0, 0.0);
 

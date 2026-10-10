@@ -12,13 +12,16 @@ class Ensemble
 
     public :
 
+        using iterator = typename vector<T>::iterator;
         using const_iterator = typename vector<T>::const_iterator;
 
         Ensemble(int = 0);
 
-        vector<T> getVector() const;
+        vector<T> & getVector();
 
         int size() const;
+        iterator begin();
+        iterator end();
         const_iterator begin() const;
         const_iterator end() const;
 
@@ -29,10 +32,18 @@ template <typename T>
 Ensemble<T>::Ensemble(int capa) : vecteur_complexe(vector<T>(capa)) {}
 
 template <typename T>
-vector<T> Ensemble<T>::getVector() const { return vecteur_complexe; }
+vector<T> & Ensemble<T>::getVector() { return vecteur_complexe; }
 
 template <typename T>
 int Ensemble<T>::size() const { return vecteur_complexe.size(); }
+
+template <typename T>
+typename Ensemble<T>::iterator Ensemble<T>::begin()
+{ return vecteur_complexe.begin(); }
+
+template <typename T>
+typename Ensemble<T>::iterator Ensemble<T>::end()
+{ return vecteur_complexe.end(); }
 
 template <typename T>
 typename Ensemble<T>::const_iterator Ensemble<T>::begin() const
@@ -53,5 +64,11 @@ template <typename T, template <typename> class C>
 Algebrique moyenne_generique(const C<T> &);
 
 #include "moyenne_algebrique.h"
+
+template <typename T>
+void rotate(Ensemble<T> &, double);
+
+#include "rotation_polaire.h"
+#include "rotate_pivot.hpp"
 
 #endif

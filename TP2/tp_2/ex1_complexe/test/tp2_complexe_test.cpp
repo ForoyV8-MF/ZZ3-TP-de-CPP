@@ -218,7 +218,7 @@ TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
 }
 
 // #12 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::Rotate_Polaire") {
+TEST_CASE("TP2_Ensemble::Rotate_Polaire") {
   Ensemble<Polaire> ens;
 
   ens.ajouter(Polaire(3.0, 4.0));
@@ -247,10 +247,10 @@ TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
 
 	REQUIRE((*it).getMod() == Catch::Approx(7.0));
 	REQUIRE((*it).getArg() == Catch::Approx(0.931416));
-} */
+}
 
 // #13 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::Rotate_Algebrique") {
+TEST_CASE("TP2_Ensemble::Rotate_Algebrique") {
   Ensemble<Algebrique> ens;
 
   ens.ajouter(Algebrique(3.0, 4.0));
@@ -279,10 +279,10 @@ TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
 
 	REQUIRE((*it).getRe() == Catch::Approx(10.6066));
 	REQUIRE((*it).getIm() == Catch::Approx(0.7071));
-} */
+}
 
 // #14 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::RotatePivot") {
+TEST_CASE("TP2_Ensemble::RotatePivot") {
   Ensemble<Polaire> ens;
 
   ens.ajouter(Polaire(3.0, 4.0));
@@ -313,10 +313,10 @@ TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
 
 	REQUIRE((*it).getMod() == Catch::Approx(8.081897));
 	REQUIRE((*it).getArg() == Catch::Approx(1.732033));
-} */
+}
 
 // #15 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::RotatePivot_Algebrique") {
+TEST_CASE("TP2_Ensemble::RotatePivot_Algebrique") {
   Ensemble<Algebrique> ens;
 
   ens.ajouter(Algebrique(3.0, 4.0));
@@ -347,10 +347,10 @@ TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
 
 	REQUIRE((*it).getRe() == Catch::Approx(-5.520548));
 	REQUIRE((*it).getIm() == Catch::Approx(-2.023667));
-} */
+}
 
 // #16 -------------------------------------------------------------------------
-/* TEST_CASE("TP2_Ensemble::RotatePivot_Algebrique_Spe") {
+TEST_CASE("TP2_Ensemble::RotatePivot_Algebrique_Spe") {
   Ensemble<Algebrique> ens;
 
 	double inf = std::numeric_limits<double>::infinity();
@@ -366,5 +366,6 @@ TEST_CASE("TP2_Ensemble::MoyenneGenerique_VecteurPolaire") {
 	// L'implémentation utilisant la classe Polaire ne cause aucun calcul
 	// de ce type, contrairement à une implémentation n'utilisant que la
 	// classe Algebrique
+
 	REQUIRE(std::isnan(a.getRe()));
-} */
+}

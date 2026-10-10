@@ -48,8 +48,8 @@ Algebrique Algebrique::operator/(double diviseur)
 
     if(diviseur != 0.0)
     {
-        division.setRe((*this).getRe() / diviseur);
-        division.setIm((*this).getIm() / diviseur);
+        division.setRe(this->getRe() / diviseur);
+        division.setIm(this->getIm() / diviseur);
 
         // cout << diviseur << endl;
     }
