@@ -7,14 +7,14 @@
 
 #include <demangle.hpp>
 
-// #include <chaine.hpp>
+#include <chaine.hpp>
 // #include <cosinus.hpp>
 // #include <exponentielle.hpp>
 
 template <typename T> std::string type_name(T && x) { return demangle(typeid(x).name()); }
 
 // #1 --------------------------------------------------------------------------
-/* TEST_CASE("TP3_Chaine::Exception") {
+TEST_CASE("TP3_Chaine::Exception") {
 	int erreur = 0;
 
 	long i{};
@@ -43,7 +43,7 @@ template <typename T> std::string type_name(T && x) { return demangle(typeid(x).
 	}
 
 	REQUIRE(erreur == 2);
-} */
+}
 
 // #2 --------------------------------------------------------------------------
 /* TEST_CASE("TP3_Chaine::ConversionSimple") {
