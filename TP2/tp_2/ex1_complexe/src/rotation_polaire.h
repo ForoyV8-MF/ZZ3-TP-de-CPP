@@ -13,31 +13,14 @@ void rotate(Ensemble<T> & tournerdanslevidelevide, double theta)
         vector<T> & tournoi = tournerdanslevidelevide.getVector();
         double angle;
 
-        for (T & polaire : tournoi)
+        for (T & complexe : tournoi)
         {
-            angle = polaire.getArg();
-            polaire.setArg(angle + theta);
-        }
-    }
-};
+            Polaire temporaire = complexe;
 
-void rotate(Ensemble<Algebrique> & tournaire, double gamma)
-{
-    int taille = tournaire.size();
-    std::cout << "zizi" << std::endl;
+            angle = temporaire.getArg();
+            temporaire.setArg(angle + theta);
 
-    if(taille > 0)
-    {
-        vector<Algebrique> & tournage = tournaire.getVector();
-        double real, imaginary;
-
-        for (Algebrique & algebrique : tournage)
-        {
-            real = algebrique.getRe();
-            imaginary = algebrique.getIm();
-
-            algebrique.setRe((double) real * cos(gamma) - imaginary * sin(gamma));
-            algebrique.setIm((double) real * sin(gamma) + imaginary * cos(gamma));
+            complexe = temporaire;
         }
     }
 }
