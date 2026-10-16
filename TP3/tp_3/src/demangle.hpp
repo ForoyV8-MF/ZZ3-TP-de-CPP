@@ -4,8 +4,10 @@
 
 // Entetes //---------------------------------------------------------------------------------------
 #include <string>
+#include <sstream>
 #include <exception>
 #include <stdexcept>
+#include <typeinfo>
 
 // Fonction "demangle" pour GCC //------------------------------------------------------------------
 #ifdef __GNUC__
