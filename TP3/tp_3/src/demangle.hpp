@@ -28,5 +28,8 @@
  inline std::string naw_demangle(const std::string & name) { return name; }
 #endif
 
+#include "factorielle.hpp"
+#include "puissance.hpp"
+
 // Fin //-------------------------------------------------------------------------------------------
 #endif
