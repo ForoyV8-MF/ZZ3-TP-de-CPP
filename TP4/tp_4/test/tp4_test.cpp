@@ -4,6 +4,7 @@
 #include <sstream>
 #include <type_traits>
 
+#include "usine.hpp"
 // #include <paquet.hpp>
 // #include <consommateur.hpp>
 
@@ -17,7 +18,7 @@ struct has_public_constructor< T,
                              > : std::true_type {};
 
 //------------------------------------------------------------------------------------------------ 1
-/* TEST_CASE ( "TP4_Carte::Usine52" ) {
+TEST_CASE ( "TP4_Carte::Usine52" ) {
  UsineCarte usine;
 
  for (unsigned i = 0; i<52; ++i) {
@@ -27,7 +28,7 @@ struct has_public_constructor< T,
  }
 
  REQUIRE ( usine.getCarte() == nullptr );
-} */
+}
 
 //------------------------------------------------------------------------------------------------ 2
 /* TEST_CASE ( "TP4_Carte::CarteInterface" ) {
