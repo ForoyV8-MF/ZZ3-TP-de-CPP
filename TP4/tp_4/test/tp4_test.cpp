@@ -66,8 +66,8 @@ TEST_CASE ( "TP4_Carte::UsineN" ) {
  REQUIRE ( usine.getCarte() == nullptr );
 }
 
-//------------------------------------------------------------------------------------------------ 5
-/* TEST_CASE ( "TP4_Carte::PaquetRemplir" ) {
+//#5------------------------------------------------------------------------------------------------ 5
+TEST_CASE ( "TP4_Carte::PaquetRemplir" ) {
  const unsigned n = 27;
 
  paquet_t paquet;
@@ -78,7 +78,7 @@ TEST_CASE ( "TP4_Carte::UsineN" ) {
  for (unsigned i = 0; i<n; ++i) {
   REQUIRE ( paquet[i]->getValeur() == i );
  }
-} */
+}
 
 //------------------------------------------------------------------------------------------------ 6
 /* TEST_CASE ( "TP4_Carte::PaquetFlux" ) {
