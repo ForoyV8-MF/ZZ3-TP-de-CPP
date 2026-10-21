@@ -5,7 +5,7 @@
 #include <type_traits>
 
 #include "usine.hpp"
-// #include <paquet.hpp>
+#include <paquet.hpp>
 // #include <consommateur.hpp>
 
 // Tests //-----------------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ struct has_public_constructor< T,
                                std::enable_if_t<std::is_same<T,decltype(T(1))>::value>
                              > : std::true_type {};
 
-//------------------------------------------------------------------------------------------------ 1
+//#1------------------------------------------------------------------------------------------------ 1
 TEST_CASE ( "TP4_Carte::Usine52" ) {
  UsineCarte usine;
 
@@ -30,8 +30,8 @@ TEST_CASE ( "TP4_Carte::Usine52" ) {
  REQUIRE ( usine.getCarte() == nullptr );
 }
 
-//------------------------------------------------------------------------------------------------ 2
-/* TEST_CASE ( "TP4_Carte::CarteInterface" ) {
+//#2------------------------------------------------------------------------------------------------ 2
+TEST_CASE ( "TP4_Carte::CarteInterface" ) {
  // Contructeur de copie existe ?
  REQUIRE ( std::is_copy_constructible<Carte>::value == false );
 
@@ -40,19 +40,19 @@ TEST_CASE ( "TP4_Carte::Usine52" ) {
 
  // Constructeur ad hoc existe ?
  REQUIRE ( has_public_constructor<Carte>::value == false );
-} */
+}
 
-//------------------------------------------------------------------------------------------------ 3
-/* TEST_CASE ( "TP4_Carte::UsineInterface" ) {
+//#3------------------------------------------------------------------------------------------------ 3
+TEST_CASE ( "TP4_Carte::UsineInterface" ) {
  // Contructeur de copie existe ?
  REQUIRE ( std::is_copy_constructible<UsineCarte>::value == false );
 
  // Operateur d'affectation par copie existe ?
  REQUIRE ( std::is_copy_assignable<UsineCarte>::value == false );
-} */
+}
 
-//------------------------------------------------------------------------------------------------ 4
-/* TEST_CASE ( "TP4_Carte::UsineN" ) {
+//#4------------------------------------------------------------------------------------------------ 4
+TEST_CASE ( "TP4_Carte::UsineN" ) {
  const unsigned n = 32;
 
  UsineCarte usine(n);
@@ -64,7 +64,7 @@ TEST_CASE ( "TP4_Carte::Usine52" ) {
  }
 
  REQUIRE ( usine.getCarte() == nullptr );
-} */
+}
 
 //------------------------------------------------------------------------------------------------ 5
 /* TEST_CASE ( "TP4_Carte::PaquetRemplir" ) {

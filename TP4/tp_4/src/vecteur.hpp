@@ -5,6 +5,8 @@
 // Entetes //---------------------------------------------------------------------------------------
 #include <complexe.hpp>
 #include <stdexcept>
+#include <algorithm>
+#include <utility>
 
 // Classe  V e c t e u r //-------------------------------------------------------------------------
 class Vecteur {
@@ -37,8 +39,18 @@ class Vecteur {
   }
 
   //------------------------------------------------------------------------------Constructeur mouvement
-  Vecteur(const Vecteur && v) : taille_(v.taille_),tableau_(new complexe_t[taille_]) {
-   for (unsigned i = 0; i<taille_; ++i) tableau_[i]=std::move(v[i]);
+  Vecteur(Vecteur && v) : taille_(v.taille_),tableau_(new complexe_t[taille_]) {
+   // for (unsigned i = 0; i<taille_; ++i) tableau_[i]=std::move(v[i]); // N'optimise pas suffisamment
+    // std::swap(tableau_, v.tableau_);
+    // std::swap(taille_, v.taille_);
+
+    delete[] tableau_;
+
+    tableau_ = v.tableau_;
+    taille_ = v.taille_;
+
+    v.tableau_ = nullptr;
+    v.taille_ = 0;
   }
 
   //-------------------------------------------------------------------------------------Destructeur
@@ -56,12 +68,15 @@ class Vecteur {
 
 //-------------------------------------------------------------------------------Affectation mouvement
   Vecteur & operator=(Vecteur && v) {
-   if (this!=&v) {
-    if (taille_!=v.taille_) throw std::length_error("");
-    for (unsigned i = 0; i<v.taille_; ++i) tableau_[i]=std::move(v[i]);
-   }
+    delete[] tableau_;
 
-   return *this;
+    tableau_ = v.tableau_;
+    taille_ = v.taille_;
+
+    v.tableau_ = nullptr;
+    v.taille_ = 0;
+
+    return *this;
   }
 };
 
