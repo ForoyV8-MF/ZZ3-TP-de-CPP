@@ -22,18 +22,19 @@ endif()
 set(sources
 	src/carte.cpp
 	src/paquet.cpp
-	# src/ressource.cpp
+	src/ressource.cpp
 	src/usine.cpp
+	src/consommateur.cpp
 )
 
 # Optional: Add any new header files here
 set(headers
 	src/carte.hpp
 	src/complexe.hpp
-	# src/consommateur.hpp
+	src/consommateur.hpp
 	src/mouchard.hpp
 	src/paquet.hpp
-	# src/ressource.hpp
+	src/ressource.hpp
 	src/usine.hpp
 	src/vecteur.hpp
 )
@@ -49,10 +50,10 @@ FetchContent_MakeAvailable(Catch2)
 add_library(tp_4 OBJECT
 		src/carte.hpp
 		src/complexe.hpp
-		# src/consommateur.hpp
+		src/consommateur.hpp
 		src/mouchard.hpp
 		src/paquet.hpp
-		# src/ressource.hpp
+		src/ressource.hpp
 		src/usine.hpp
 		src/vecteur.hpp)
 target_sources(tp_4 PRIVATE ${sources} PUBLIC ${headers})
