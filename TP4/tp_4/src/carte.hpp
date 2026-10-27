@@ -8,12 +8,15 @@ class Carte
         Carte(unsigned int);
 
         unsigned int valeur;
+        static unsigned int compteur;
 
     public : 
         Carte(const Carte &) = delete;
+        ~Carte();
         Carte & operator=(const Carte &) = delete;
 
         unsigned int getValeur() const;
+        static unsigned int getCompteur();
 
     friend class UsineCarte;
 };
